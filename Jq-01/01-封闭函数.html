@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        window.onload = function (){
+
+            // 作为匿名函数 直接执行
+
+            // 1.匿名函数 -- 网页一打开 内部就开始做一些操作
+            (function (){
+                alert("匿名函数1");
+            })()
+
+            ;(function (){
+                alert("匿名函数2");
+            })()
+
+            ~function (){
+                alert("封闭函数3");
+            }()
+
+            !function (){
+                alert("封闭函数4");
+            }()
+
+            // 2.经常 JS 一份代码 两个重名函数 覆盖
+
+            function fnAlert() {
+                alert("111");
+            }
+            fnAlert();
+            // 避免 同名函数 冲突
+            (function fnClose() {
+                    function fnAlert() {
+                    alert("222");
+                }
+                fnAlert();
+                
+            })()
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 常用选择器
+        // JS 标签 类 ID 层级后代 属性选择器div[class = "abs"]
+
+        // iquery
+        $(document).ready(function(){
+
+            // juquery
+            // 1.标签
+            var $element = $("div");
+
+            // 2.类
+            $element = $(".para");
+           
+            // 3.ID
+            $element = $("#spa");
+
+            // 4.层级选择器
+            $element = $(".box div");
+
+            // 5.属性选择器
+            $element = $("div[class = box3]");
+
+            
+            $element.css({"color":"red"});
+        })
+
+    </script>
+</head>
+<body>
+    
+    <div>标签div</div>
+    <p class="para">类段落</p>
+    <span id="spa">ID span</span>
+
+    <div class="box">
+        <div>层级选择器</div>
+    </div>
+
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+
+</body>
+</html>

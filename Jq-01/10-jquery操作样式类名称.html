@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .box{
+            background: red;
+        }
+
+        .green{
+            background:green;
+            
+        }
+        
+    </style>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function () {
+            // 1.给一个标签 添加类名称
+            $("div").addClass("green");
+
+            // 2.删除标签 绑定的 类名称
+            $("div").removeClass("box");
+
+            // 3.切换类名称
+            // 如果有 这个类名称 删除
+            // 如果没有 添加
+            $("div").slideToggle("box");
+
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

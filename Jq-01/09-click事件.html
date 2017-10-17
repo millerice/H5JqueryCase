@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 1.设置宽高 背景色
+            var $div = $(".box");
+            $div.css({
+                "width":"200px",
+                "height":"200px",
+                "background-color":"red"
+            });
+            // 2.监听 点击事件 改变 背景颜色
+
+            // js的写法
+            // $div.onclick = function () {
+            //     $div.style.backgroundColor = "green";
+            // }
+
+            $div.click(function (){
+                // $div.css({"background-color":"green"});
+
+                // $(this) ----->jquery中 监听的这个对象
+                $(this).css({"background-color":"blue"});
+                
+            });
+
+            // 将6和li 绑定6次
+            $(".list li").click(function(){
+
+                $(this).css({"color":"red"});
+
+                // index() 获取元素的角标
+                alert($(this).index());
+            });
+        })
+    </script>
+</head>
+<body>
+
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function () {
+
+            // 1.has 包含X元素的 X个元素X
+
+            var $element = $("div").has("p");
+            // $element.css({"background-color":"red"});
+
+            // 2.not 除了某个标签外的元素
+                        // 选中除了.box2的元素外的 div标签
+            $element = $("div").not(".box2");
+            $element.css({"background-color":"red"});
+
+            // 3.eq(角标) 等于
+            var $eq = $("li");
+            $eq.eq(3).css({"color":"red"});
+
+
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <p>段落标签</p>
+    </div>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    
+</body>
+</html>

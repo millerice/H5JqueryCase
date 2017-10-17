@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1.关联Jquery的函数库 -->
+    <script src="../js/jquery-1.12.4.min.js"> </script>
+
+    <script>
+        // 2.jquery 代码少
+        $(document).ready(function(){
+            // 1.获取元素
+            var $div = $("#div1");
+
+            // 2.获取属性
+            var sSize = $div.css("fontSize");
+            alert("jquery +" + sSize);
+
+        })
+
+        // 1.原生
+        window.onload = function(){
+            // 1.获取元素
+            var oDiv = document.getElementById("div1");
+            // 2.获取属性
+            var sSize = oDiv.style.fontSize;
+
+            alert("JS +" + sSize);
+
+        }
+    </script>
+</head>
+<body>
+    <div class="box" id="div1">div 的标签</div>
+</body>
+</html>
