@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .tap_con{
+                width: 500px;
+                height: 350px;
+                margin: 50px auto 0;
+            }
+    
+            .tap_btns{
+                height: 50px;
+    
+            }
+    
+            .tap_btns input{
+                width: 100px;
+                height: 50px;
+                background-color: lightgray;
+                border: 0px;
+                outline: none;
+            }
+            .tap_btns .active{
+                background-color: gold;
+    
+            }
+            .tab_cons{
+                height: 300px;
+                background-color: gold;
+    
+            }
+            .tab_cons div {
+                height: 300px;
+                line-height: 300px;
+                text-align: center;
+                display: none;
+                font-size: 30px;
+    
+            }
+            .tab_cons .current{
+                display: block;
+            }
+        </style>
+
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+  
+    <script>
+        $(function (){
+            // 1.获取三个按钮
+            var $btns = $(".tap_btns input");
+
+            // 2.获取三个div标签
+            var $divs = $(".tab_cons div");
+
+            // 3.监听 按钮的点击
+            $btns.click(function () {
+
+                 // 4.点的哪个按钮 哪个按钮就变黄色
+                //  选中的按钮 ---除了它之外的按钮 ---去掉黄色
+                $(this).addClass("active").siblings().removeClass("active");
+                // 5.对应的div也显示
+                // 5.1获取当前 按钮的角标
+                var iIndex = $(this).index();
+
+                // 5.2 根据角标找到 对应的div
+                // 当前的div -------除了它之外的两个div ---去除current 样式
+                $divs.eq(iIndex).addClass("current").siblings().removeClass("current");
+            });
+
+           
+        })
+    </script>
+</head>
+<body>
+    <div class="tap_con">
+        <div class="tap_btns">
+
+            <input type="button" value="按钮一" class="active">
+            <input type="button" value="按钮二">
+            <input type="button" value="按钮三">
+        </div>
+
+        <div class="tab_cons">
+            <div class="current">按钮一对应的内容</div>
+            <div>按钮二对应的内容</div>
+            <div>按钮三对应的内容</div>
+        </div>
+    </div>
+</body>
+</html>

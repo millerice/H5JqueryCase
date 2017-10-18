@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+
+        }
+        .box{
+            background: red;
+
+        }
+        .box1{
+            background: green;
+        }
+    </style>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.color.js"></script>
+    <script>
+        $(function (){
+
+            // 1.
+            // $(".box").animate({
+            //     "width":1000,
+            // },1000,"linear",function(){
+            //     // alert("动画结束了");
+            // });
+            // $(".box1").animate({
+            //     "width":1000,
+            // },1000,"swing",function(){
+            //     // alert("动画结束了");
+            // });
+
+            // 2.
+            // $(".box").animate({
+            //     "background-color":"yellow",
+            // },1000,"linear");
+
+
+            // 3.连续动画
+            $(".box").animate({
+                "width":1000,
+            },1000,function() {
+
+
+                $(".box").animate({
+                    "height": 500,
+                }, 1000, "linear");
+
+
+            }
+            )
+        })
+
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+</body>
+</html>
