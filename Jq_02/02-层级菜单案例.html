@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /* 1.初始化 */
+    ul,li{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a{
+        text-decoration: none;
+
+    }
+
+    /* 2.设置 外层menu的大小 居中 */
+    .menu{
+        width: 200px;
+        margin: 50px auto 0;
+    }
+    /* 3.设置a标签的文字，大小样式 */
+    .menu .level1, .menu li ul a{
+        width: 200px;
+        height: 30px;
+        line-height: 30px;
+        background-color: #3366cc;
+        text-indent: 10px;
+        color: #fff;
+
+        display: block;
+    }
+    /* 4.添加每个格子的下划线 */
+    .menu.level1{
+        border-bottom: 1px solid #afc6f6;
+
+    }
+    /* 5.设置 内层格子的背景 */
+    .menu li ul a{
+        font-size: 14px;
+        text-indent: 20px;
+        background-color: #7aa;
+    }
+    /* 6.给内层盒子 添加底部边框 */
+    .menu li ul li{
+        border-bottom: 1px solid #afc6f6;
+    }
+    /* 7.给内层盒子的 a 标签 添加伪类 */
+    .menu li ul a:hover{
+        background-color: #f6b544;
+    }
+    /* 8.设置内部盒子隐藏 第一个格子打开 */
+    .menu li ul {
+        display: none;
+
+    }
+    .menu li .current{
+        display: block;
+    }
+
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function () {
+            // 1.获取元素
+            var $lis = $(".level1");
+            // 2.监听 点击事件 click
+            $lis.click(function (){
+                // 1.点击分类的水果 下面的ul打开
+                 var $next = $(this).next().slideDown();
+                // 2.每次只打开一个 其他的关闭 siblings()
+                // $next 对象 是选中的a 标签下面的ul列表
+                // $next 需要获取 父元素的li标签
+                // 通过li标签 获取 其他的同级元素 siblings()
+                // 获取同级元素 li 下面的子元素children()
+                // li 子元素有两个 过滤下 children("ul")
+                // slideup()
+                $next.parent().siblings().children("ul").slideUp();
+            })
+        })
+    </script>
+</head>
+<body>
+
+    <ul class="menu">
+        <li>
+            <a href="#" class="level1">水果</a>
+            <ul class="current">
+                <li><a href="">苹果</a></li>
+                <li><a href="">香蕉</a></li>
+                <li><a href="">栗子</a></li>                
+                <li><a href="">火龙果</a></li>               
+            </ul>
+        </li>
+
+        <li>
+                <a href="#" class="level1">海鲜</a>
+                <ul >
+                    <li><a href="">苹果</a></li>
+                    <li><a href="">香蕉</a></li>
+                    <li><a href="">栗子</a></li>                
+                    <li><a href="">火龙果</a></li>               
+                </ul>
+        </li>
+
+        <li>
+                <a href="#" class="level1">肉类</a>
+                <ul >
+                    <li><a href="">苹果</a></li>
+                    <li><a href="">香蕉</a></li>
+                    <li><a href="">栗子</a></li>                
+                    <li><a href="">火龙果</a></li>               
+                </ul>
+        </li>
+
+        <li>
+                <a href="#" class="level1">水果</a>
+                <ul >
+                    <li><a href="">苹果</a></li>
+                    <li><a href="">香蕉</a></li>
+                    <li><a href="">栗子</a></li>                
+                    <li><a href="">火龙果</a></li>               
+                </ul>
+        </li>
+
+        <li>
+                <a href="#" class="level1">水果</a>
+                <ul >
+                    <li><a href="">苹果</a></li>
+                    <li><a href="">香蕉</a></li>
+                    <li><a href="">栗子</a></li>                
+                    <li><a href="">火龙果</a></li>               
+                </ul>
+        </li>
+
+
+    </ul>
+    
+</body>
+</html>

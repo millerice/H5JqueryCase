@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: none;
+
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery.color.js"></script>
+
+    <script>
+        // 特殊效果
+        // 1.淡入淡出
+        $(function () {
+            $("#btn").click(function () {
+                // 淡入
+                // $(".box").fadeIn();
+                // 淡出
+                // $(".box").fadeOut();
+                // 切换
+                // $(".box").fadeToggle();
+
+                 // 2.显示和隐藏
+                // $(".box").hide();
+                // $(".box").show();
+                // $(".box").toggle();
+
+                // 3.卷开 卷起
+                // $(".box").slideDown();
+                // $(".box").slideUp();
+                $(".box").slideToggle();
+
+
+            })
+
+           
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="操作按钮" id="btn">
+    <div class="box"></div>
+    <span>结尾的文字</span>
+</body>
+</html>

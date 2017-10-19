@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+
+            border: 3px solid green;
+            padding: 5px;
+
+            margin: 10px;
+        }
+    </style>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function (){
+
+            // jquery 获取尺寸
+
+            // 1.width() height();----->内容大小
+
+            var width = $(".box").width();
+            var height = $(".box").height();
+
+            // 2.innerWidth()  innerHeight() padding 
+            var innerW = $(".box").innerWidth();
+            var innerH = $(".box").innerHeight();
+
+            // 3.outerWidth() --> 真实宽高 一样 padding + border
+            var outW = $(".box").outerWidth();
+            var outH = $(".box").outerHeight();
+
+            // 4.outerWidth(true) --->margin  padding border
+            var outwTrue = $(".box").outerWidth(true);
+            var outhTrue = $(".box").outerHeight(true);
+            
+            alert(outwTrue + "+" + outhTrue);
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

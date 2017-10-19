@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+
+            border: 3px solid green;
+            padding: 5px;
+
+            /* margin: 10px; */
+
+            float: right;
+        }
+    </style>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+    $(function () {
+        // 1.获取标签元素的 绝对位置
+        var position = $(".box").offset();
+
+        console.log(position.left);
+        console.log(position.top);
+        
+    })
+
+
+    </script>
+
+</head>
+<body>
+    <div class="box"></div>
+    
+</body>
+</html>

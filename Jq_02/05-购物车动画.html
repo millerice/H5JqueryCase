@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+        #btn{
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            background: green;
+
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            margin-left: -100px;
+
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid green;
+
+            line-height: 100px;
+            text-align: center;
+
+            float: right;
+            margin-top: 60px;
+            margin-right: 60px;
+
+        }
+
+        .box span{
+            color: red;
+        }
+
+        .red{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background: red;
+            display: none;
+
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+        }
+    </style>
+<script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function () {
+            // 1.获取相关属性
+            var $red = $(".red"); 
+            var $box = $(".box");
+            var $btn = $("#btn");
+            
+            // 3.获取 按钮的绝对位置
+            var oBtnOffset = $btn.offset();
+            // 4.获取 box 的绝对位置 宽高
+            var oBoxOffset = $box.offset();
+            var iBoxW = $box.outerWidth();
+            var iBoxH = $box.outerHeight();
+
+            // 2.监听 按钮的点击 click
+            // 购物车的个数
+            var index = 0;
+            // 动画结束的标志
+            var bIsOver = false;
+
+            $btn.click(function (){
+                if(bIsOver){
+                    return;
+                }
+
+                bIsOver = true;
+
+                index++;
+
+                // 5.小红点 显示
+                $red.css({
+                    "top":oBtnOffset.top +20,
+                    "left":oBtnOffset.left + 20,
+                });
+                $red.show();
+
+                // 6.放动画
+                $red.animate({
+                    "top":oBoxOffset.top + iBoxW * 0.4,
+                    "left":oBoxOffset.left + iBoxH * 0.4,
+                },1000, function(){
+                    // 7.动画结束 小红点隐藏
+                    $red.hide();
+
+                    // 8.购物数量 个数 -->设置标签包裹的内容
+                    $(".box span").html(index);   
+
+                    // 9.优化     
+                    bIsOver = false;            
+                });
+
+              
+
+
+            })
+           
+           
+
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="加入购物车" id="btn">
+    <div class="box">
+        购物车<span>0</span>
+    </div>
+    <div class="red"></div>
+
+</body>
+</html>

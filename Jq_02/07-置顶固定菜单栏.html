@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .banner{
+                width: 1000px;
+                height: 200px;
+                background: lightcyan;
+                margin: 0 auto;
+                text-align: center;
+                line-height: 200px;
+            }
+            .menu,.place{
+                width: 1000px;
+                height:50px;
+                background:gold;
+                margin: 0 auto;
+                text-align: center;
+                line-height: 50px;
+            }
+
+           
+            .details{
+                margin: 0 auto;
+                width: 1000px;
+                text-align: center;
+                
+            }
+
+            /* 按钮 */
+            .uparrow{
+                width: 50px;
+                height: 50px;
+                background: black;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 50px;
+
+                position: fixed;
+                right: 50px;
+                bottom: 50px;
+
+                display: none;
+
+            }
+            .place{
+                display: none;
+            }
+         
+
+
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function (){
+            // 1.获取相关元素
+            var $banner = $(".banner");
+            var $menu = $(".menu");
+            var $upBtn = $(".uparrow");
+
+            // banner 的高度
+            var bannerHeight = $banner.outerHeight();
+
+
+            // 2.监听 窗口的滚动
+            $(window).scroll(function () {
+                // 3.获取 文档滚动的距离 和 banner的高度
+                var scrollDistance = $(document).scrollTop();
+
+                 // 4.判断 给menu 添加固定的定位
+                 if(scrollDistance > bannerHeight){
+                     $menu.css({
+                         "position":"fixed",
+                         "top":0,
+                         "left":"50%",
+                         "margin-left":-500,
+                     });
+
+                    //  占位的div 显示
+                    $(".place").show();
+
+                 }else{
+                    $menu.css({
+                        // 取消定位
+                         "position":"static",
+                        
+                         "margin-left":"auto",
+                     });
+
+                      //  占位的div 隐藏
+                    $(".place").hide();
+                 }
+
+                //  5.判断置顶按钮的隐藏和显示
+                if(scrollDistance > bannerHeight + 200){
+                    $(".uparrow").fadeIn();
+
+                }else{
+                    $("uparrow").fadeOut();
+                }
+
+            })
+
+
+            // 3.监听 置顶按钮的点击
+            $upBtn.click(function (){
+                // $(document).scrollTop(0);
+
+                // 回到顶部 固定写法
+                $("html,body").animate({"scrollTop":0});
+            })
+
+            
+        })
+    </script>
+   
+</head>
+<body>
+
+
+  
+    <!-- //↑ -->
+    <div class="uparrow"><img src="../images/up.png" alt=""></div>
+    <div class="banner">轮播图的广告</div>
+    <div class="menu">菜单文字</div>
+    <div class="place"></div>
+    <div class="details">
+        <p style="color:red">页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>页面文字内容</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+</body>
+</html>
