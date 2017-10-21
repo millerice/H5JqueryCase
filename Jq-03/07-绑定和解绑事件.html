@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function (){
+
+            $(".box").bind("click mouseleave", function (even){
+                // 默认 都是事件对象
+                console.log(even);
+
+                // 取消绑定
+                $(this).unbind("click");
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .talk_con{
+            width:600px;
+            height:500px;
+            border:1px solid #666;
+            margin:50px auto 0;
+            background:#f9f9f9;
+        }
+        .talk_show{
+            width:580px;
+            height:420px;
+            border:1px solid #666;
+            background:#fff;
+            margin:10px auto 0;
+            overflow:auto;
+        }
+        .talk_input{
+            width:580px;
+            margin:10px auto 0;
+        }
+        .whotalk{
+            width:80px;
+            height:30px;
+            float:left;
+            outline:none;
+        }
+        .talk_word{
+            width:420px;
+            height:26px;
+            padding:0px;
+            float:left;
+            margin-left:10px;
+            outline:none;
+            text-indent:10px;
+        }        
+        .talk_sub{
+            width:56px;
+            height:30px;
+            float:left;
+            margin-left:10px;
+        }
+        .atalk{
+           margin:10px; 
+        }
+        .atalk span{
+            display:inline-block;
+            background:#0181cc;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .btalk{
+            margin:10px;
+            text-align:right;
+        }
+        .btalk span{
+            display:inline-block;
+            background:#ef8201;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+  
+    <script>
+        $(function () {
+            
+            // 1.获取元素
+            // 2.监听发送按钮
+            // 3.判断是否为空
+            // 4.判断AB
+            // 5.内容拼接
+            // 6.赋值
+            // 7.清空输入框
+
+
+             // 1.获取元素
+             var $words = $("#words");
+             var $who = $("#who");
+             var $inputTxt = $("#talkwords");
+             var $sendBtn = $("#talksub");
+
+            // 2.监听发送按钮
+            $sendBtn.click(function () {
+                // 3.判断是否为空
+                //    var sContent = $inputTxt.prop("value");
+                var sContent = $inputTxt.val();
+
+            
+                if(sContent == ""){
+                    alert("请输入内容");
+                    return;
+                }
+                // 4.判断AB
+                var sWho = $who.val();
+                var sOldContent = $words.html();
+                var sNewContent = "";
+                if(sWho == 0){//A 
+                    sNewContent = sOldContent + '<div class="atalk"><span>A说：'+sContent +'</span></div>';
+                }else{//B
+                    sNewContent = sOldContent + '<div class="btalk"><span>B说：'+sContent +'</span></div>';
+                }
+                // 5.内容拼接
+
+                // 6.赋值
+                $words.html(sNewContent);
+
+                  // 7.清空输入框
+                  $inputTxt.val("");
+                
+
+            })
+            
+        })
+    
+    </script>
+</head>
+<body>
+    <div class="talk_con">
+
+        <!--1.对话框-->
+        <div class="talk_show" id="words">
+            <div class="atalk"><span>A说：吃饭了吗？</span></div>
+            <div class="btalk"><span>B说：还没呢，你呢？</span></div>
+        </div>
+
+        <!--2.选择人和 输入内容和发送-->
+        <div class="talk_input">
+            <select class="whotalk" id="who">
+                <option value="0">A说：</option>
+                <option value="1">B说：</option>
+            </select>
+            <input type="text" class="talk_word" id="talkwords">
+            <input type="button" value="发送" class="talk_sub" id="talksub">
+        </div>
+    </div>
+</body>
+</html>

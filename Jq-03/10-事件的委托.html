@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $( function () {
+            // 1.以前的监听
+            // 1.1 绑定了 6 次
+            // 1.2新增的元素 没有事件
+
+            // $(".list li").click(function () {
+            //     $(this).css({"color":"red"});
+
+            // })
+            // var sNew = "<li>" + "新增7个" +"</li>"
+            // $(".list").html($(".list").html() + sNew);
+
+
+            // 2.委托的写法 将多个子元素 的事件 委托给 父元素事件
+            // 减少绑定的次数 提高性能
+            // 新增的元素 同样有事件
+            $(".list").delegate("li","click",function () {
+                $(this).css({"color":"red"});
+
+                // console.log($(this).index());
+            })
+            var sNew =  "<li>" + "新增7个" + "</li>";
+            $(".list").html($(".list").html() + sNew);
+        })
+    </script>
+
+</head>
+<body>
+        <ul class="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+
+
+</body>
+</html>

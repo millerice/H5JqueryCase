@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../js/jqery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 1.前面的 $("div").css("color")
+            // 行内式 <p style = "color : red">
+            // 嵌入式 <style> p{color:red} </style>
+
+            // 1.prop()
+            var sSrc = $("img").prop("src");
+            console.log(sSrc);
+
+            // 设置写入
+            $("img").prop({"src":"../images/002.jpg"})
+            // 了解 attr--->获取自定义的属性
+
+            // alert($("img").attr("renminbi"));
+
+            // 2.获取div 包裹的内容 
+            var content = $("div").html();
+
+            console.log(content);
+            
+            // 写入
+            $("div").html("新内容");
+
+        })
+    </script>
+
+</head>
+<body>
+    <img src="../images/001.jpg" alt="风景图1" renminbi = "100万">
+    <div class="box">div包裹的内容</div>
+
+</body>
+</html>

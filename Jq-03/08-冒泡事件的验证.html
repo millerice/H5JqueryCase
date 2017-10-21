@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+          .grandfather{
+            width: 500px;
+            height: 500px;
+            background: red;
+            margin: 100px auto 0;
+        }
+
+        .father{
+            width: 400px;
+            height: 400px;
+            background: green;
+        }
+
+        .son{
+            width: 200px;
+            height: 200px;
+            background: gold;
+        }
+    </style>    
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function () {
+            // 事件的传递 ： 子 --> 父 --->祖父 --->window
+            // 冒泡：父元素有同样的事件
+            $(".son").click(function(event) {
+                alert("son");
+
+                // 阻止事件冒泡
+                event.stopPropagation();
+            });
+
+            // 父
+            $(".father").click(function() {
+                alert("father");
+            });
+            // 祖父
+            $(".grandfather").click(function() {
+                alert("grandfather");
+            });
+        })
+
+    </script>
+
+</head>
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

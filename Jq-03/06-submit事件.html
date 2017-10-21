@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        
+        $(function () {
+
+            // 监听 提交事件 ：自定义网络请求
+            $("form").submit(function (){
+
+                // console.log("提交事件");
+                // alert("提交事件");
+
+                return false;
+            })
+        })
+    </script>   
+</head>
+<body>
+    <form action="">
+
+        <input type="text" name="username">
+        <input type="submit">
+
+    </form>
+    
+</body>
+</html>

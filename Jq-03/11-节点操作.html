@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 10px solid green;
+        }
+
+        p{
+            color: red;
+        }
+    </style>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 节点操作
+
+            // 1.创建节点
+            // var $div = $("<div>");//空标签
+            var $para = $("<p>新增段落标签</p>")
+
+            // 2.插入节点
+            // 2.1当前标签的内部
+                    // 最后面
+            // $(".box").append($div);
+            // $para.appendTo($(".box"));
+                    // 前面
+            // $(".box").prepend($para);
+            // $para.prependTo($(".box"));
+                
+            
+            // 2.2在当前标签的外面
+                     //  前
+            // $(".box").before($para);
+            // $para.insertBefore($(".box"));
+
+                     // 后
+             // $(".box").after($para);
+            // $para.insertAfter($(".box"));
+
+            // 3.删除
+            $(".box").remove();
+        })
+    </script>
+
+</head>
+<body>
+    <div class="box">
+
+        div 内部的内容
+    </div>
+</body>
+</html>

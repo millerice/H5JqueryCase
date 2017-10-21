@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function (){
+            // 焦点事件
+
+            // 1.获取焦点事件
+                // 自动获取焦点 方便用户填写资料
+
+            // $("#one").focus();
+            // $("#one").focus(function (){
+                // 如果用户点击 输入 你想做的功能
+            //     alert("123");
+            // })
+
+            // 2.失去焦点
+            $("#one").blur(function () {
+                // 一般用户 输入完毕后 检测输入的内容是否正确
+                alert("失去焦点!");
+            });
+
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="one">
+    <input type="text">
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background: red;
+            overflow: hidden;
+
+        }
+        .box1{
+         
+            height: 100px;
+            background: green;
+            margin-top: 100px;
+            color: white;
+            font-size: 50px;
+            
+        }
+
+    </style>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function (){
+
+            // 1.进入子元素 会触发的事件
+            var index = 0;
+            // $(".box").mouseover(function (){
+            //     index ++;
+            //     $(".box1").html(index);
+            // })
+            // 2.进入子元素 不会触发的事件
+            // $(".box").mouseout(function (){
+            //     index ++;
+            //     $(".box1").html(index);
+            // })
+
+
+            // 工作中使用  最常用的
+            // $(".box").mouseenter(function (){
+            //     index ++;
+            //     $(".box1").html(index);
+            // })
+
+            // $(".box").mouseleave(function (){
+            //     index ++;
+            //     $(".box1").html(index);
+            // })
+
+
+            // 3.hover()
+            $(".box").hover(function (){
+                index ++;
+                $(".box1").html(index);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="box1"></div>
+    </div>
+</body>
+</html>

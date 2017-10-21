@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 1.点击 弹出按钮 弹出提示框
+            $("#btn01").click(function (){
+
+                // $("#pop").show();
+                $("#pop").fadeIn();
+
+                return false;
+            })
+
+            // 2.选中空白的地方  隐藏提示框
+            $(window).click(function (){
+                $("#pop").hide();
+                // $("#pop").fadeOut;
+
+            // 3.找到详情的提示框标签 阻止冒泡 
+
+                $(".pop_con").click(function () {
+                    return false;
+                })
+
+            // 4.X 按钮
+            $("#shutoff").click(function (){
+                $("#pop").hide();
+            })
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="弹出弹框" id="btn01">
+    <div class="pop_main" id="pop">
+        <div class="pop_con">
+            <div class="pop_title">
+                <h3>系统提示</h3>
+                <a href="#" id="shutoff">×</a>
+            </div>
+            <div class="pop_detail">
+                <p class="pop_text">亲！请关注近期的优惠活动！</p>
+            </div>
+            <div class="pop_footer">
+                              
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+</html>
