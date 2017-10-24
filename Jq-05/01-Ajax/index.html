@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        $(function () {
+            // ajax的jquery的写法
+            $.ajax({
+                // 1.请求的地址
+                url:"json/data.json",
+                // 2.请求的方式 get post
+                type:"get",
+                // 3.数据格式
+                dataType:"json",
+                // 4.请求成功
+                success:function (callBackData){
+                    console.log(callBackData);
+                    if(callBackData.code == 1){//代表有数据
+                        console.log(callBackData.data.name);
+                    }else{
+                        console.log("请先注册！");
+                    }
+
+                },
+                // 5.请求失败
+                // 1.没网
+                // 2.60s 超出最大时间
+                // 3.前后端沟通有问题 500！ 字段的key
+                error:function (){
+                    alert("请求失败，请稍后再试！")
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

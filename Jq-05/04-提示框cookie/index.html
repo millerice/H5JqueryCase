@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script>
+    //   $(function () {
+
+
+    //         //1.如果检测不到这个 cookie 弹出
+    //         var sCookie = $.cookie("isFirst");
+    //         if(!(sCookie == "first")){//第一次没有值 不匹配 弹出提示框
+
+    //             $(".pop_main").fadeIn();
+    //         }
+
+    //         //2.点击知道按钮  --- >设置cookie
+
+    //         $(".confirm").click(function () {
+    //             $(".pop_main").fadeOut();
+
+    //             $.cookie("isFirst","first",{expires:30,path:"/"});
+    //         })
+          
+    //     // $(".pop_main").fadeIn();
+    //         //1.cookie的获取
+    //         // var sCookies = $.cookie("isRead");
+    //         // alert(sCookies);
+
+    //         // //2.设置
+    //         // //日期 以天数为准
+    //         // $.cookie("isRead","readed",{expires:4,path:"/"});
+    //   })
+    
+    </script>
+
+
+    <script>
+        $(function () {
+
+            // 1.如果检测不到这个cookie 弹出
+
+            var sCookie = $.cookie("isFirst");
+            if(!(sCookie == "first")) {
+                // 第一次没有值 不匹配 弹出提示框
+                $(".pop_main").fadeIn();
+            }
+
+            // 2.点击知道按钮 设置cookie
+            $(".confirm").click(function () {
+                $(".pop_main").fadeOut();
+                $.cookie("isFirst","first",{expires:30,path:"/"});
+            })
+
+
+
+
+
+
+            // // 1.cookie 的获取
+            // var sCookies = $.cookie("isRead");
+            // alert(sCookies);
+
+            // // 2.设置
+            // $.cookie("isRead","readed",{expires:4,path:"/"});
+        })
+    </script>
+</head>
+<body>
+    <h1>页面的内容</h1>
+    <div class="pop_main">
+        <div class="pop_con">
+            <div class="pop_title">
+                <h3>系统提示</h3>
+                <a href="#">×</a>
+            </div>
+            <div class="pop_detail">
+                <p class="pop_text">亲！近期有优惠活动，请强力关注！！</p>
+            </div>
+            <div class="pop_footer">               
+                <input type="button" value="朕知道了！" class="confirm">                
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+</html>

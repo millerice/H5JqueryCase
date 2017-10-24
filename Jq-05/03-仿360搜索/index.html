@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>520搜索</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px dotted pink;
+            color: pink;
+            font-size: 20px;
+
+            
+        }
+        input{
+            outline:none;
+            border: 1px dotted pink;
+            height: 50px;
+            width:200px;
+           
+            font-size: 40px;
+        }
+
+       
+        .list li{
+            height: 30px;
+            line-height: 30px;
+            color: greenyellow;
+            font-size: 18px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+   
+        <script>
+            // https://www.baidu.com/?tn=98012088_5_dg&ch=12
+            $(function () {
+            // keyup 键盘弹起
+            $("input").keyup(function () {
+                
+           
+                $.ajax({
+                    url:"https://www.baidu.com/",
+                    type:"get",
+                    dataType:"jsonp",
+                    // 给服务器传递参数
+                    data:{word:$(this).val()}
+                })
+                .done(function (jsonpData) {
+                    // console.log(jsonpData);
+                    var aOneArray = jsonpData.s;
+                    var aNewArray = [];
+                    for(var index = 0; index <aOneArray.length; index++){
+                        // 获取内容
+                        var sContent = aOneArray[index];
+                        // 拼接节点
+                        var $li =$("<li>" + sContent + "</li>");
+                        // 添加到列表
+                        // $(".list").appent($li);
+                        aNewArray.push($li);
+                    }
+                    // 整体覆盖
+                    $(".list").html(aNewArray);
+                    
+                })
+                .error(function () {
+                    alert("请求失败！");
+                })
+            })
+            
+         })
+
+        </script>
+
+
+
+
+
+</head>
+<body>
+
+    <div class="box">百度搜索</div>
+    <input type="text">
+    <ul class="list">
+
+    </ul>
+</body>
+</html>

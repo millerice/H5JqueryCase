@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsonp的测试</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function () {
+          $.ajax({
+            //   域名 浏览器下的网址  本地的找不到
+              url:"http://localhost:8888/jsonp/data.js",
+              type:"get",
+            //   数据类型必须是 jsonp
+              dataType:"jsonp",
+            //   3.js资源文件的内部数据 名字对称
+            
+              jsonpCallback:"fnCallBackMethod"
+          })
+          .done(function (jsonpData) {
+              console.log(jsonpData);
+
+          })
+          .error(function () {
+              alert("请求失败！");
+
+          })
+      })
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

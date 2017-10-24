@@ -1,0 +1,21 @@
+{
+    "code":1,
+    "data":{
+        "name":"lisi",
+        "age":88
+    },
+    "array":[
+        {
+            "name":"lisi",
+            "age":88
+        },
+        {
+            "name":"lisi",
+            "age":88
+        },
+        {
+            "name":"lisi",
+            "age":88
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // 1.正则的写法
+
+        var sOne = "acndjag";
+        var sTwo = "123gh";
+
+        var regOne = new RegExp("a");
+        var regTwo = /a/i;
+        var isTrue = regTwo.test(sOne);
+
+        // 2.纯数字的正则
+        var sNumber = "1234afsa";
+        var sNum = "12345678";
+        var regNumber = /^\d+$/;
+        isTrue = regNumber.test(sNumber);
+
+        // 3.g global全文搜索
+        var sStr = "agfahgchlahfauicflahrC";
+        // 默认找到一个 
+        var regFour = /c/;
+        var regSix = /c/gi;
+        var sNew = sStr.replace(regFour,"#")
+        alert(sNew);
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
