@@ -1,2 +1,1 @@
-# Jquery_code
-this ids about jquery code
+非常实用的jquery案例，代码简单，功能实用，我们可以简单更改后放在自己的项目中！
